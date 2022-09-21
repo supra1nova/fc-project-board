@@ -56,11 +56,8 @@ develop : 해당 브랜치를 기반으로 개발을 진행하며 모든 기능�
 feature : 새로운 기능 개발 및 버그 수정이 필요할 때마다 'develop' 브랜치로부터 분기
 hotfix : 배포한 버전에 긴급하게 수정을 해야 할 필요가 있을 경우, 'main' 브랜치에서 분기하는 브랜치
 ###커밋 메시지
-type: 내용
-^--^  ^---^
-|     |
-|
-+-------> Type: chore, docs, feat, fix, refactor, style, or test.
+- type: 내용
+
 feat: 새로운 기능 추가
 fix: 버그 수정
 docs: 문서 수정
@@ -68,3 +65,6 @@ style: 코드 포맷팅, 세미콜론 누락, 코드 변경이 없는 경우
 refactor: 코드 리팩토링
 test: 테스트 코드, 리펙토링 테스트 코드 추가
 chore: 빌드 업무 수정, 의존성 파일 수정
+
+* * * 
+참고 : https://github.com/f-lab-edu/double-shop
