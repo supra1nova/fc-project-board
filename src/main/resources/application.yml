@@ -1,0 +1,52 @@
+# 기본 debug log를 false 값으로 둬서 꺼준다 -> logback 사용 위함
+debug: false
+# actuator의 endpoint 중 감춰진 것을 모두 활성화 시켜주는 기능.
+management.endpoints.web.exposure.include: "*"
+
+loggin:
+  level:
+    com.selfpractice.projectboard: debug
+    ## debug를 false로 지정했지만 request, response 만 받기 위해 web.servlet 을 설정함.
+    org.springframework.web.servlet: debug
+    ## jpa 의 query log를 debug log로 찍어줌으로써 parameter값을 보여준다.
+    org.hibernate.type.descriptor.sql.BasicBinder: trace
+
+
+spring:
+  ## 민감한 DB 정보는 별도의 application-sensitive.yml 파일로 분리
+  .profiles:
+    default: sensitive
+  jpa:
+    ## db에 미리 초기 데이터를 만들어 넣어주는 등의 설정할 수 있다. (시퀄 파일을 만들어 넣어야함)
+    defer-datasource-initialization: true
+    ## 엔티티와 설정 등을 참고해 ddl 문을 자동 생성한다.
+    hibernate.ddl-auto: create
+    #    open-in-view: false
+    ## sql문을 보여준다.
+    show-sql: true
+    properties:
+      ## sql 문을 예쁘게 포메팅 해서 보여준다.
+      hibernate.format_sql: true
+      ## 연관관계가 설정된 쿼리들을 벌크로 가져와서 셀렉트문으로 바꿔준다.
+      hibernate.default_batch_fetch_size: 100
+  ## h2 db의 콘솔을 활성화 여부
+  h2.console.enabled: true
+  ## 테스트 db를 언제 사용할 지 설정, schema.sql,data.sql등의 스크립트를 어느 시점에 동작할지 설정
+  sql.init.mode: always
+  # 당장 필요한 것 아니라 주석 처리
+#  thymeleaf.cache: false
+#  data.rest:
+#    base-path: /api
+#    detection-strategy: annotated
+
+## yaml 파일은 --- 로 기본 설정파일을 구분할 수 있다. 어쨋든 아래 내용은 테스트 db내용
+---
+
+spring:
+  ## 즉 testdb가 활성화 되면 아래 내용을 적용하라는 뜻
+  config.activate.on-profile: testdb
+#  datasource:
+#    url: jdbc:h2:mem:board;mode=mariadb
+#    driver-class-name: org.mariadb.jdbc.Driver
+#  sql.init.mode: always
+#  test.database.replace: none
