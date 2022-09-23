@@ -30,7 +30,6 @@ spring:
       ## 연관관계가 설정된 쿼리들을 벌크로 가져와서 셀렉트문으로 바꿔준다.
       hibernate.default_batch_fetch_size: 100
   ## h2 db의 콘솔을 활성화 여부
-  h2.console.enabled: true
   ## 테스트 db를 언제 사용할 지 설정, schema.sql,data.sql등의 스크립트를 어느 시점에 동작할지 설정
   sql.init.mode: always
   # 당장 필요한 것 아니라 주석 처리
