@@ -77,7 +77,7 @@ public class DataRestTest {
                 .andExpect(content().contentType(MediaType.valueOf("application/hal+json")));
     }
 
-    @DisplayName("[api] 댓글 리스트 조회")
+    @DisplayName("[api] 댓글 단건 조회")
     @Test
     void givenNothing_WhenRequestingArticleComment_ThenReturnsArticleCommentJsonResponse() throws Exception {
         // Given
