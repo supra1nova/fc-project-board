@@ -292,6 +292,11 @@ gradle-app.setting
 # Java heap dump
 *.hprof
 
+### Spring boot resources configuration ###
+application-sensitive.yml
+
+### Querydsl ###
+/src/main/generated
+
 # End of https://www.toptal.com/developers/gitignore/api/java,gradle,intellij+all,windows,macos,eclipse,visualstudiocode
 
-application-sensitive.yml
