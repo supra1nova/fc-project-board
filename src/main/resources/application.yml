@@ -3,7 +3,7 @@ debug: false
 # actuator의 endpoint 중 감춰진 것을 모두 활성화 시켜주는 기능.
 management.endpoints.web.exposure.include: "*"
 
-loggin:
+logging:
   level:
     com.selfpractice.projectboard: debug
     ## debug를 false로 지정했지만 request, response 만 받기 위해 web.servlet 을 설정함.
@@ -41,9 +41,9 @@ spring:
 ## yaml 파일은 --- 로 기본 설정파일을 구분할 수 있다. 어쨋든 아래 내용은 테스트 db내용
 ---
 
-spring:
+#spring:
   ## 즉 testdb가 활성화 되면 아래 내용을 적용하라는 뜻
-  config.activate.on-profile: testdb
+#  config.activate.on-profile: testdb
 #  datasource:
 #    url: jdbc:h2:mem:board;mode=mariadb
 #    driver-class-name: org.mariadb.jdbc.Driver
