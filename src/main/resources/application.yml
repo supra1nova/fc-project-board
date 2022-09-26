@@ -37,6 +37,9 @@ spring:
   data.rest:
     base-path: /api
     detection-strategy: annotated
+  thymeleaf3:
+    decoupled-logic: true
+
 
 ## yaml 파일은 --- 로 기본 설정파일을 구분할 수 있다. 어쨋든 아래 내용은 테스트 db내용
 ---
