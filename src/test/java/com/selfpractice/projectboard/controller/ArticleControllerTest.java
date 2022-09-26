@@ -1,18 +1,21 @@
 package com.selfpractice.projectboard.controller;
 
+import com.selfpractice.projectboard.config.SecurityConfig;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.context.annotation.Import;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
-import static org.junit.jupiter.api.Assertions.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @DisplayName("View 컨트롤러 - 게시글")
+// 기존 spring security 설정이 아니라 customize 된 security 설정을 불러와서 적용
+@Import(SecurityConfig.class)
 // WebMvcTest에서는 테스트 대상이 되는 클래스만 읽어와서 테스트 할 수 있음 -> 훨씬 가볍게 테스트 가능
 @WebMvcTest(ArticleController.class)
 class ArticleControllerTest {
